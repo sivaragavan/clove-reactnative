@@ -5,7 +5,7 @@ import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
 
-const RouterComponent = () => (
+const CloveRouter = () => (
   <Router sceneStyle={{ paddingTop: 65 }} >
     <Scene key="auth">
       <Scene key="login" component={LoginForm} title="Login" />
@@ -33,4 +33,4 @@ const RouterComponent = () => (
   </Router >
 );
 
-export default RouterComponent;
+export default CloveRouter;

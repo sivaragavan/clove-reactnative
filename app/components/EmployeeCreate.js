@@ -26,8 +26,8 @@ class EmployeeCreate extends Component {
   }
 }
 
-const mapStateToProps = ({ employeeForm }) => {
-  const { name, phone, shift } = employeeForm;
+const mapStateToProps = ({ employeeDetail }) => {
+  const { name, phone, shift } = employeeDetail;
   return { name, phone, shift };
 };
 

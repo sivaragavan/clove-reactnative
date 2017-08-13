@@ -68,7 +68,7 @@ class EmployeeEdit extends Component {
 }
 
 const mapStateToProps = state => {
-  const { name, phone, shift } = state.employeeForm;
+  const { name, phone, shift } = state.employeeDetail;
   return { name, phone, shift };
 };
 

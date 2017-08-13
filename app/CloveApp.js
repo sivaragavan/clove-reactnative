@@ -5,9 +5,9 @@ import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 
 import reducers from './reducers';
-import RouterComponent from './Router';
+import CloveRouter from './CloveRouter';
 
-class App extends Component {
+class CloveApp extends Component {
 
   componentWillMount() {
     const config = {
@@ -27,10 +27,10 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <RouterComponent />
+        <CloveRouter />
       </Provider>
     );
   }
 }
 
-export default App;
+export default CloveApp;
