@@ -1,6 +1,7 @@
 import React from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
+import { Scene, Router } from 'react-native-router-flux';
 import PodcastList from './components/PodcastList';
+import EpisodeList from './components/EpisodeList';
 
 const CloveRouter = () => (
   <Router sceneStyle={{ paddingTop: 65 }} >
@@ -9,9 +10,12 @@ const CloveRouter = () => (
         key="podcastList"
         component={PodcastList}
         title="Podcasts"
-        // rightTitle="Add"
-        // onRight={() => Actions.employeeCreate()}
         initial
+      />
+      <Scene
+        key="episodeList"
+        component={EpisodeList}
+        title="Episodes"
       />
     </Scene >
   </Router >
