@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-//import { Actions } from 'react-native-router-flux';
+import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
 class EpisodeListItem extends Component {
 
   onRowPress() {
-    //Actions.employeeEdit({ employee: this.props.employee });
+    Actions.episodeDetail({ episode: this.props.episode });
   }
 
   render() {
