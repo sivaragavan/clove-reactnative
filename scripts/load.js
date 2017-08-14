@@ -1,7 +1,6 @@
 import axios from 'axios';
 import parsePodcast from 'node-podcast-parser';
 import firebase from 'firebase';
-import urlencode from 'urlencode';
 
 const podcasts = [
   // {
@@ -38,7 +37,7 @@ console.log(`Loading ${podcasts.length} Podcasts\n`);
 
 podcasts.forEach(podcast => {
   axios.get(podcast.url)
-    .then(function (response) {
+    .then(response => {
       parsePodcast(response.data, (err, podcastJSON) => {
         if (err) {
           console.error(err);
@@ -48,12 +47,11 @@ podcasts.forEach(podcast => {
         firebase.database().ref(`/podcasts/${podcast.pid}`)
           .set(podcastJSON)
           .then(() => {
-            console.log(`Loaded : ${podcast.pid} - ${podcastJSON.title} (${podcastJSON.episodes.length})`);
+            console.log(`${podcast.pid} - ${podcastJSON.title} (${podcastJSON.episodes.length})`);
           });
-
       });
     })
-    .catch(function (error) {
+    .catch(error => {
       console.log(error);
     });
 });
