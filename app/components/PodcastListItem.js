@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+//import { Actions } from 'react-native-router-flux';
 import { CardSection } from './common';
 
-class EmployeeListItem extends Component {
+class PodcastListItem extends Component {
 
   onRowPress() {
-    Actions.employeeEdit({ employee: this.props.employee });
+    //Actions.employeeEdit({ employee: this.props.employee });
   }
 
   render() {
-    const { name } = this.props.employee;
+    const { title } = this.props.podcast;
     return (
       <TouchableWithoutFeedback onPress={this.onRowPress.bind(this)}>
         <View>
           <CardSection>
             <Text style={styles.titleStyle}>
-              {name}
+              {title}
             </Text>
           </CardSection>
         </View>
@@ -32,4 +32,4 @@ const styles = {
   }
 };
 
-export default EmployeeListItem;
+export default PodcastListItem;

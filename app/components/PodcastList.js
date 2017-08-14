@@ -3,12 +3,12 @@ import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
-import { employeesFetch } from '../actions';
-import EmployeeListItem from './EmployeeListItem';
+import { podcastsFetch } from '../actions';
+import PodcastListItem from './PodcastListItem';
 
-class EmployeeList extends Component {
+class PodcastList extends Component {
   componentWillMount() {
-    this.props.employeesFetch();
+    this.props.podcastsFetch();
     this.createDataSource(this.props);
   }
 
@@ -16,16 +16,16 @@ class EmployeeList extends Component {
     this.createDataSource(nextProps);
   }
 
-  createDataSource({ employees }) {
+  createDataSource({ podcasts }) {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2
     });
 
-    this.dataSource = ds.cloneWithRows(employees);
+    this.dataSource = ds.cloneWithRows(podcasts);
   }
 
-  renderRow(employee) {
-    return <EmployeeListItem employee={employee} />;
+  renderRow(podcast) {
+    return <PodcastListItem podcast={podcast} />;
   }
 
   render() {
@@ -40,8 +40,8 @@ class EmployeeList extends Component {
 }
 
 const mapStateToProps = state => {
-  const employees = _.map(state.employees, (val, uid) => ({ ...val, uid }));
-  return { employees };
+  const podcasts = _.map(state.podcasts, (val, uid) => ({ ...val, uid }));
+  return { podcasts };
 };
 
-export default connect(mapStateToProps, { employeesFetch })(EmployeeList);
+export default connect(mapStateToProps, { podcastsFetch })(PodcastList);

@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux';
-import auth from './auth';
-import employeeDetail from './employeeDetail';
-import employees from './employees';
+import podcasts from './podcasts';
 
 export default combineReducers({
-  auth,
-  employees,
-  employeeDetail
+  podcasts
 });
