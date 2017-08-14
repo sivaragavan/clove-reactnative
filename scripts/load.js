@@ -15,6 +15,10 @@ const podcasts = [
   {
     pid: 'radiolab',
     url: 'http://feeds.wnyc.org/radiolab'
+  },
+  {
+    pid: 'Tim Ferriss Show',
+    url: 'http://timferriss.libsyn.com/rss'
   }
 
 ];
