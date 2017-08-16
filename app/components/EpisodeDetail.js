@@ -13,6 +13,7 @@ class EpisodeDetail extends Component {
       showIniOSMediaCenter: true,
       showInAndroidNotifications: true
     });
+    ReactNativeAudioStreaming.seekToTime(100);
   }
 
   render() {
